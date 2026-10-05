@@ -1,5 +1,6 @@
 import pygame
 import text_button_logic as TB
+import border_squares as BS
 
 
 pygame.init()

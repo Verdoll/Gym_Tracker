@@ -11,12 +11,12 @@ class TextButton(Universal_object.Object):
         self.text_color = text_color
         self.x_pos_txt = x_pos_txt
         self.y_pos_txt = y_pos_txt
+        self.is_active = False
 
 
     def draw_text(self, screen):
         text_surface = self.font.render(self.text, True, self.text_color)
         screen.blit(text_surface, (self.x_pos_txt, self.y_pos_txt))
-
 
 
     def draw_button(self, screen):
@@ -31,5 +31,6 @@ class TextButton(Universal_object.Object):
     def is_active(self, x, y):
         if self.x <= x <= self.x + self.width and self.y <= y <= self.y + self.height:
             return True
+        return False
 
 
