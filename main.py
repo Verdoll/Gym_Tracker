@@ -1,4 +1,5 @@
 import pygame
+import UI_base
 import text_button_logic as TB
 import border_squares as BS
 
@@ -14,17 +15,6 @@ pygame.display.set_caption("Gym Tracker")
 
 clock = pygame.time.Clock()
 
-test_button = TB.TextButton(100,
-                            100,
-                            100,
-                            100,
-                            (255,255,255),
-                            'df324s',
-                            pygame.font.SysFont("comicsans", 30),
-                            (255, 0, 0),
-                            120,
-                            120)
-
 running = True
 
 while running:
@@ -37,10 +27,12 @@ while running:
 
     # Update
 
-
     # Draw
     screen.fill((30, 30, 30))
-    test_button.draw_button(screen)
+    for contain in UI_base.main_screen:
+        contain.draw(screen)
+    for contain in UI_base.stats_screen:
+        contain.draw(screen)
 
     pygame.display.flip()
 
