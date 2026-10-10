@@ -1,4 +1,5 @@
 import border_squares
+import Buttons
 import pygame
 pygame.init()
 font = pygame.font.SysFont('comicsans', 20)
@@ -24,6 +25,20 @@ Name_Data_square = border_squares.Border_square( #сверху для даты �
     3
 )
 main_screen.append(Name_Data_square)
+New_Workout = Buttons.Button(
+    10,
+    80,
+    230,
+    50,
+    (30,30,30),
+    (220,220,220),
+    25,
+    3,
+    font.render('Новая тренировка', True, (255,255,255)),
+    (40, 90),
+    (120,0,0)
+)
+main_screen.append(New_Workout)
 #версия
 version_text = font.render(f'{name} {current_version}', True, (255,255,255))
 version_text_pos = (30,20)
