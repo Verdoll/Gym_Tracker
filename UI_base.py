@@ -10,8 +10,21 @@ name = 'Gym Tracker'
 
 
 main_screen = []
+main_buttons = []
 main_text = []
 stats_screen = []
+
+def drawing(screen):
+    for contain in main_screen:
+        contain.draw(screen)
+
+    for text in main_text:
+        screen.blit(text[0], text[1])
+
+    for button in main_buttons:
+        button.draw(screen)
+
+
 
 
 Name_Data_square = border_squares.Border_square( #сверху для даты и названия
@@ -36,9 +49,10 @@ New_Workout = Buttons.Button(
     3,
     font.render('Новая тренировка', True, (255,255,255)),
     (40, 90),
-    (120,0,0)
+    (120,0,0),
+    'new_workout'
 )
-main_screen.append(New_Workout)
+main_buttons.append(New_Workout)
 #версия
 version_text = font.render(f'{name} {current_version}', True, (255,255,255))
 version_text_pos = (30,20)

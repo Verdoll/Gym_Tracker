@@ -27,15 +27,18 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+            x, y = pygame.mouse.get_pos()
+            print('1', x,y)
+            for button in UI_base.main_buttons:
+                button.check_click(x,y, program)
+                print(button.is_active, program.active_window)
 
     # Update
 
     # Draw
     screen.fill((30, 30, 30))
-    for contain in UI_base.main_screen:
-        contain.draw(screen)
-    for text in UI_base.main_text:
-        screen.blit(text[0], text[1])
+    UI_base.drawing(screen)
 
     if program.active_window == 'main':
         for contain in UI_base.stats_screen:
