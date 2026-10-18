@@ -121,6 +121,11 @@ Button_choice_new_workout = Buttons.Button_with_choice(
 )
 new_workout_buttons.append(Button_choice_new_workout)
 
+
+
+###############################################
+#              NEW ACTIVITYS                  #
+###############################################
 PullUps_activity = Buttons.Additional_Button(
     270,
     150,
@@ -150,4 +155,64 @@ Bench_Press = Buttons.Additional_Button(
     None,
 )
 choice_activity.append(Bench_Press)
+
+Biceps = Buttons.Additional_Button(
+    270,
+    250,
+    300,
+    50,
+    pallete.background,
+    pallete.white,
+    10,
+    3,
+    font.render('Бицепс', True, (255,255,255)),
+    pallete.active_color_buttons,
+    None,
+)
+choice_activity.append(Biceps)
+
+Triceps = Buttons.Additional_Button(
+    270,
+    300,
+    300,
+    50,
+    pallete.background,
+    pallete.white,
+    10,
+    3,
+    font.render('Трицепс', True, (255,255,255)),
+    pallete.active_color_buttons,
+    None,
+)
+choice_activity.append(Triceps)
+
+Seated_row = Buttons.Additional_Button(
+    270,
+    350,
+    300,
+    50,
+    pallete.background,
+    pallete.white,
+    10,
+    3,
+    font.render('Горизонтальная тяга', True, (255,255,255)),
+    pallete.active_color_buttons,
+    None,
+)
+choice_activity.append(Seated_row)
+
+Dumbbell_lateral_raises = Buttons.Additional_Button(
+    270,
+    400,
+    300,
+    50,
+    pallete.background,
+    pallete.white,
+    10,
+    3,
+    font.render('Подъем гантелей в стороны', True, (255,255,255)),
+    pallete.active_color_buttons,
+    None,
+)
+choice_activity.append(Dumbbell_lateral_raises)
 
