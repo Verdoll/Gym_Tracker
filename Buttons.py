@@ -55,6 +55,7 @@ class Button_with_choice(Button):
         self.is_active = False
         self.window = window
         self.common_text = '                                       \/'
+        self_id = None
 
 
     def swap_mode(self):
@@ -83,12 +84,14 @@ class Button_with_choice(Button):
 
 
 class Additional_Button(Button):
-    def __init__(self, x, y, width, height, color, color_sides, border_radius, sides_width, text, active_color, mode):
+    def __init__(self, x, y, width, height, color, color_sides, border_radius, sides_width, text, active_color, mode, id):
         Button.__init__(self, x, y, width, height, color, color_sides, border_radius, sides_width, text, active_color, mode)
+        self.id = id
 
 
     def click(self, main_button):
         main_button.text = self.text
+        main_button.id = self.id
         main_button.color = main_button.disactive_color
         main_button.is_active = False
 

@@ -3,6 +3,11 @@ import Buttons
 import Color_pallete as pallete
 import pygame
 import Program
+import json
+
+with open("exercises.json", "r", encoding="utf-8") as file:
+    data = json.load(file)
+
 pygame.init()
 font = pygame.font.SysFont('comicsans', 20)
 
@@ -135,9 +140,11 @@ PullUps_activity = Buttons.Additional_Button(
     pallete.white,
     10,
     3,
-    font.render('Подтягивания', True, (255,255,255)),
+    font.render(data['Pull-Ups']['name'], True, (255,255,255)),
     pallete.active_color_buttons,
     None,
+    data['Pull-Ups']['id']
+
 )
 choice_activity.append(PullUps_activity)
 
@@ -150,9 +157,10 @@ Bench_Press = Buttons.Additional_Button(
     pallete.white,
     10,
     3,
-    font.render('Жим лежа', True, (255,255,255)),
+    font.render(data['Bench_Press']['name'], True, (255,255,255)),
     pallete.active_color_buttons,
     None,
+    data['Bench_Press']['id']
 )
 choice_activity.append(Bench_Press)
 
@@ -165,9 +173,10 @@ Biceps = Buttons.Additional_Button(
     pallete.white,
     10,
     3,
-    font.render('Бицепс', True, (255,255,255)),
+    font.render(data['Biceps']['name'], True, (255,255,255)),
     pallete.active_color_buttons,
     None,
+    data['Biceps']['id']
 )
 choice_activity.append(Biceps)
 
@@ -180,9 +189,10 @@ Triceps = Buttons.Additional_Button(
     pallete.white,
     10,
     3,
-    font.render('Трицепс', True, (255,255,255)),
+    font.render(data['Triceps']['name'], True, (255,255,255)),
     pallete.active_color_buttons,
     None,
+    data['Triceps']['id']
 )
 choice_activity.append(Triceps)
 
@@ -195,9 +205,10 @@ Seated_row = Buttons.Additional_Button(
     pallete.white,
     10,
     3,
-    font.render('Горизонтальная тяга', True, (255,255,255)),
+    font.render(data['Seated_row']['name'], True, (255,255,255)),
     pallete.active_color_buttons,
     None,
+    data['Seated_row']['id']
 )
 choice_activity.append(Seated_row)
 
@@ -210,9 +221,10 @@ Dumbbell_lateral_raises = Buttons.Additional_Button(
     pallete.white,
     10,
     3,
-    font.render('Подъем гантелей в стороны', True, (255,255,255)),
+    font.render(data['Dumbbell_lateral_raises']['name'], True, (255,255,255)),
     pallete.active_color_buttons,
     None,
+    data['Dumbbell_lateral_raises']['id']
 )
 choice_activity.append(Dumbbell_lateral_raises)
 
